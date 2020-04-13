@@ -1,0 +1,20 @@
+<!--
+  ~    项目名称:TimeNote
+  ~    文件名称:arrays.xml
+  ~    Date:4/13/20 3:37 PM
+  ~    Author:SYC
+  ~    Copyright(c) 2020, SYC
+  -->
+
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
+    </string-array>
+</resources>
