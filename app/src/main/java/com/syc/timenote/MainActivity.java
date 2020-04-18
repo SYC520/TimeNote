@@ -34,8 +34,10 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.syc.timenote.adapter.NoteAdapter;
 import com.syc.timenote.bean.Note;
+import com.syc.timenote.ui.FocusActivity;
 import com.syc.timenote.ui.LoginActivity;
 import com.syc.timenote.ui.SettingActivity;
+import com.syc.timenote.ui.UserInfoActivity;
 import com.syc.timenote.utils.AnalysisUtils;
 
 import java.lang.reflect.Method;
@@ -77,7 +79,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Intent intent = null;
+                switch (item.getItemId()) {
+                    case R.id.nav_settings:
+                        intent = new Intent(MainActivity.this, SettingActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_dropout:
+                        intent = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_focus_mode:
+                        intent = new Intent(MainActivity.this, FocusActivity.class);
+                        startActivity(intent);
+                        break;
 
+                }
                 mDrawerLayout.closeDrawers();
                 return true;
             }
@@ -138,8 +155,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recyclerView = findViewById(R.id.recycler_view);
         View view = navigationView.getHeaderView(0);
         mTv_userName = view.findViewById(R.id.user_name);
-        if (isLogin = (AnalysisUtils.isLogin(this)))
+        if (isLogin = (AnalysisUtils.isLogin(this))) {
+            Toast.makeText(this, "欢迎" + AnalysisUtils.getLoginUserName(this), Toast.LENGTH_LONG).show();
             mTv_userName.setText(AnalysisUtils.getLoginUserName(this));
+        }
         else mTv_userName.setText(R.string.no_login);
         fab.setOnClickListener(this);
         mTv_userName.setOnClickListener(this);
@@ -160,6 +179,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (!isLogin) {
                     Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
+                } else {
+                    Intent intent_userinfo = new Intent(MainActivity.this, UserInfoActivity.class);
+                    startActivity(intent_userinfo);
                 }
                 break;
             default:

@@ -19,7 +19,6 @@
         android:clickable="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="未登录..."
         android:textColor="#FFF"
         android:textSize="20sp"
         android:focusable="true" />

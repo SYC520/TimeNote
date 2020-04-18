@@ -10,24 +10,44 @@ package com.syc.timenote.bean;
 
 public class User {
 
-    private int id;
     private String userName;
+    private String nickName;
+    private String sex;
+    private String signature;
     private String password;
-
     public User() {
     }
 
-    public User(String userName, String password) {
+    public User(String userName, String nickName, String sex, String signature, String password) {
         this.userName = userName;
+        this.nickName = nickName;
+        this.sex = sex;
+        this.signature = signature;
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
     }
 
     public String getUserName() {

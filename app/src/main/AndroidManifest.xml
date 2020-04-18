@@ -10,7 +10,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.SettingActivity"
-            android:label="@string/title_activity_setting"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
@@ -24,6 +23,8 @@
         </activity>
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.UserInfoActivity" />
+        <activity android:name=".ui.FocusActivity" />
     </application>
 
 </manifest>

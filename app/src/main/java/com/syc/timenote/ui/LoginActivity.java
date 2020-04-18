@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,14 +21,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.syc.timenote.utils.DBOpenHelper;
 import com.syc.timenote.R;
 import com.syc.timenote.utils.MD5Utils;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     final String TAG = "LoginActivity";
     private String userName, userPass;
-    private DBOpenHelper mDBOpenHelper;
     private TextView mTvRegister;
     private EditText mEtUsername;
     private EditText mEtPassword;
@@ -42,7 +39,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
-        mDBOpenHelper = new DBOpenHelper(this);
     }
 
     private void initView() {

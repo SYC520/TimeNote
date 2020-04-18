@@ -23,6 +23,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.syc.timenote.R;
+import com.syc.timenote.bean.User;
+import com.syc.timenote.model.SQLiteHelperImpl;
+import com.syc.timenote.model.SQLiteOpenHelper;
 import com.syc.timenote.utils.MD5Utils;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
@@ -90,6 +93,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(userName, userPass_MD5);         //以用户名为key,密码为value保存
         editor.apply();
+        User user = new User();
+        user.setUserName(userName);
+        SQLiteHelperImpl.getInstance(this).saveUserInfo(user);
     }
 
     /**

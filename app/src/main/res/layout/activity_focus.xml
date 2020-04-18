@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~    项目名称:TimeNote
+  ~    文件名称:activity_focus.xml
+  ~    Date:4/17/20 4:25 PM
+  ~    Author:SYC
+  ~    Copyright(c) 2020, SYC
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/r1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_focus">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        tools:ignore="NotSibling,UselessParent">
+
+        <com.syc.timenote.ui.CircleRelativeLayout
+            android:id="@+id/crlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/countdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:isShowDay="true"
+                app:isShowHour="true"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:isTimeTextBold="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.3"
+                app:suffixGravity="bottom"
+                app:suffixHour="时"
+                app:suffixMinute="分"
+                app:suffixSecond="秒"
+                app:suffixTextColor="#FFFFFF"
+                app:suffixTextSize="12sp"
+                app:timeBgRadius="10dp"
+                app:timeTextColor="#FFFFFF"
+                app:timeTextSize="40sp"
+                tools:ignore="MissingConstraints" />
+        </com.syc.timenote.ui.CircleRelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
